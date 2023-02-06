@@ -1,0 +1,12 @@
+klasse teilnehmer
+
+benutzer ist für benutzer zuständig
+
+auto (kennzeichen, marke und model)
+
+bei person die funktion getautos
+funktion addAuto() //
+        löscheAuto()
+
+bei auto getFahrer/besitzer
+
