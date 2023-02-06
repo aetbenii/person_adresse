@@ -1,5 +1,5 @@
 <?php
-require_once("Buch.php");
+//require_once("Buch.php");
 require_once("DB.php");
 require_once("Person.php");
 require_once("../template/formular.html");

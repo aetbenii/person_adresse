@@ -9,7 +9,7 @@ class DB{
     public static function getDB(){
         if(self::$db == NULL){
             try{
-                self::$db = new PDO('mysql:host=localhost;dbname=bibliothek','root');
+                self::$db = new PDO('mysql:host=localhost;dbname=person','root');
                 self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             } catch(PDOException $e){

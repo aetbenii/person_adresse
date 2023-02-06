@@ -2,11 +2,35 @@
 require_once 'person.php';
 require_once 'DB.php';
 require_once 'Adresse.php';
+require_once 'Auto.php';
 
 
-$person = Person::findePerson(1);
+
+$person = Person::findePerson(2);
 echo $person."<br />";
 
-var_dump($person->getAdresse());
+
+//$person->addAuto($auto);
+//var_dump($person->getAdresse());
+
+//$auto = Auto::findeAutoNachKennzeichen("BD187");
+
+//echo $auto->getKennzeichen();
+
+var_dump($person->findeAuto());
+
+$auto = $auto->findeAutoNachKennzeichen("BZ 94949");
+echo "</br>";
+
+
+echo $auto->getId();
+
+echo "</br>";
+
+var_dump($person->findeAuto());
+
+//var_dump($auto->findeFahrer());
+
+
 
 //var_dump($person->getAdresse());

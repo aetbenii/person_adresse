@@ -103,6 +103,34 @@ class Person{
 
     } 
 
+    //\/\/\/\/\/\/\/\/\/\/\/\/\/\//
+    //          Auto             //
+
+    public function findeAuto(){
+        return Auto::findeNachPerson($this->getId());
+    }
+
+    public static function findeNachAuto(int $autoid){
+        $sql = "SELECT * FROM person 
+        JOIN person_auto on person.id = person_auto.person_id where id = ?";
+        $abfrage = DB::getDB()->prepare($sql);
+        $abfrage->execute(array($autoid));
+        $abfrage->setFetchMode(PDO::FETCH_CLASS, 'Person');
+        return $abfrage->fetchAll();
+    }    
+
+    public function addAuto(Auto $auto){
+        $sql = "INSERT INTO person_auto(person_id, auto_id) VALUES(?,?)";
+        $abfrage = DB::getDB()->prepare($sql);
+        $abfrage->execute(array($this->getId(), $auto->getId()));
+    }
+
+    public function loescheAuto(Auto $auto){
+        $sql = "DELETE FROM person_auto WHERE auto_id=?";
+        $abfrage = DB::getDB()->prepare($sql);
+        $abfrage->execute(array($auto->getId()));
+    }
+
     public function __toString()
     {
      return "ID: ".$this->getID().",<br /> Vorname:".$this->getVorname().",<br /> Nachname:".$this->getNachname();   
