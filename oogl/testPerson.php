@@ -19,14 +19,14 @@ echo $person."<br />";
 
 var_dump($person->findeAuto());
 
-$auto = $auto->findeAutoNachKennzeichen("BZ 94949");
+$auto = Auto::findeAutoNachKennzeichen("BZ 94949");
 echo "</br>";
 
 
 echo $auto->getId();
 
 echo "</br>";
-
+$person->loescheAuto($auto);
 var_dump($person->findeAuto());
 
 //var_dump($auto->findeFahrer());
